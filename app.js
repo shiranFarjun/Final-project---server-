@@ -6,6 +6,7 @@ const xss = require('xss-clean');
 
 const cors = require("cors")
 const userRouter = require('./src/routes/userRoutes');
+const productRoutes= require('./src/routes/productRoutes');
 
 const app = express();
 
@@ -44,7 +45,8 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
-app.use('/api/v1/users', userRouter);          //app.use('api/v1/users', userRouter);
+app.use('/api/v1/product', productRoutes);
+app.use('/api/v1/users', userRouter);          
 
 app.all('*', (req, res, next) => {
     res.status(404).json({
