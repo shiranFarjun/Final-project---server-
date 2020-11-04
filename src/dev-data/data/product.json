@@ -1,0 +1,121 @@
+[{
+        "_id": "5c88fa8cf4afda39709c2955",
+        "category": "Location",
+        "companyName": "Nicolas - Watsica",
+        "phone": "(911) 994-7171",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+        "locationCoordinates":[31.243870, 34.793990],
+        "address": "301 Biscayne Blvd, Miami, FL 33132, USA",
+        "maxGroupSize": 15
+    },
+    {
+        "_id": "5c88fa8cf4afda39709c2951",
+        "category": "Location",
+        "companyName": "Shields - Lakin",
+        "phone": "1-603-157-4704 x23806",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+        "locationCoordinates":[31.243870, 34.793990],
+        "address": "301 Biscayne Blvd, Miami, FL 33132, USA",
+        "maxGroupSize": 35
+    },
+    {
+        "_id": "5c88fa8cf4afda39709c2952",
+        "category": "Location",
+        "companyName": "Stoltenberg LLC",
+        "phone": "1-053-407-0897",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+        "locationCoordinates":[31.243870, 34.793990],
+        "address": "301 Biscayne Blvd, Miami, FL 33132, USA",
+        "maxGroupSize": 15
+    },
+    {
+        "_id": "5c88fa8cf4afda39709c295a",
+        "category": "Location",
+        "companyName": "Frami and Sons",
+        "phone": "156-851-6751 x441",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+        "locationCoordinates":[31.243870, 34.793990],
+        "address": "301 Biscayne Blvd, Miami, FL 33132, USA",
+        "maxGroupSize": 48
+    },
+    {
+        "_id": "5c88fa8cf4afda39709c295b",
+        "category": "Location",
+        "companyName": "Brown, Hand and Prohaska",
+        "phone": "1-213-946-7937 x6663",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+        "locationCoordinates":[31.754999, 35.214359],
+        "address": "301 Biscayne Blvd, Miami, FL 33132, USA",
+        "maxGroupSize": 10
+    },
+    {
+        "_id": "5c88fa8cf4afda39709c2961",
+        "category": "Food",
+        "companyName": "MacGyver - Mante",
+        "phone": "(917) 020-9184 x4864",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+        "maxGroupSize":60
+    },
+    {
+        "_id": "5c88fa8cf4afda39709c295d",
+        "category": "Food",
+        "companyName": "Paucek - Zieme",
+        "phone": "(730) 413-7422 x873",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "address": "301 Biscayne Blvd, Miami, FL 33132, USA",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+        "maxGroupSize": 19
+    },
+    {
+        "_id": "5c88fa8cf4afda39709c2970",
+        "category": "Food",
+        "companyName": "Halvorson, Leffler and Rempel",
+        "phone": "775-646-8920",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+        "maxGroupSize": 43
+    },
+    {
+        "_id": "5c88fa8cf4afda39709c2432",
+        "category": "Food",
+        "companyName": "Tillman - Schoen",
+        "phone": "(799) 236-1051",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"],
+        "maxGroupSize": 30
+    },
+    {
+        "_id": "5c88fa8cf4afda39709c2974",
+        "category": "Design",
+        "companyName": "Wolf and Sons",
+        "phone": "(669) 603-0480",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"]
+      
+    },
+    {
+        "_id": "5c88fa8cf4afda39709c296c",
+        "category": "Design",
+        "companyName": "Balistreri, Corkery and Rodriguez",
+        "phone": "(669) 603-0480",
+        "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "imageCover": "tour-2-cover.jpg",
+        "images": ["tour-2-1.jpg", "tour-2-2.jpg", "tour-2-3.jpg"]
+    }
+]

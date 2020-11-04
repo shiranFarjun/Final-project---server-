@@ -16,6 +16,31 @@ const signToken = id => {
     });
 };
 
+const createSendToken = (user, statusCode, res) => {
+    const token = signToken(user._id);
+    const cookieOptions = {
+        expires: new Date(
+            Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+        ),
+        httpOnly: true
+    };
+    if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
+
+    res.cookie('jwt', token, cookieOptions);
+
+    // Remove password from output
+    user.password = undefined;
+
+    res.status(statusCode).json({
+        status: 'success',
+        token,
+        data: {
+            user
+        }
+    });
+};
+
+
 
 exports.signup = async (req, res, next) => {
     const newUser = await User.create({
@@ -24,14 +49,8 @@ exports.signup = async (req, res, next) => {
         password: req.body.password,
         passwordConfirm: req.body.passwordConfirm
     });
-    const token = signToken(newUser._id);
-    res.status(200).json({
-        status: 'success',
-        token,
-        data: {
-            newUser
-        }
-    });
+    createSendToken(newUser, 201, res);
+
 };
 
 
@@ -53,13 +72,7 @@ exports.login = async (req, res, next) => {
     const token = signToken(user._id);
 
     // 3) If everything ok, send token to client
-    // createSendToken(user, 200, res);
-    res.status(201).json({
-        status: 'success',
-        data: {
-            token: token,
-        }
-    });
+    createSendToken(user, 200, res);
 };
 
 
@@ -181,13 +194,9 @@ exports.resetPassword = async (req, res, next) => {
     await user.save();
 
     // 3) Update changedPasswordAt property for the user on userModel at pre('save)
+
     // 4) Log the user in, send JWT
-    res.status(200).json({
-        status: 'success resetPassword',
-        data: {
-            user
-        }
-    })
+    createSendToken(user, 200, res);
 };
 
 exports.updatePassword = async (req, res, next) => {
@@ -207,10 +216,5 @@ exports.updatePassword = async (req, res, next) => {
     // User.findByIdAndUpdate will NOT work as intended!
 
     // 4) Log user in, send JWT
-    res.status(200).json({
-        status: 'success',
-        data: {
-            user
-        }
-    });
+    createSendToken(user, 200, res);
 };
