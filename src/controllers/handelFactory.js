@@ -1,5 +1,6 @@
+const { SchemaType } = require('mongoose');
 const AppError = require('../utils/appError');
-
+const User = require('../models/userModel');
 
 exports.getAll = Model => async (req, res, next) => {
     // const doc = await features.query.explain();
@@ -18,8 +19,7 @@ exports.getAll = Model => async (req, res, next) => {
 exports.getOne = (Model, popOptions) => async (req, res, next) => {
     // let query = Model.findById(req.params.id);
     // if (popOptions) query = query.populate(popOptions);
-    const doc = await Model.findById(req.params.id);;
-
+    const doc = await Model.findById(req.params.id);
     if (!doc) {
         return next(new AppError('No document found with that ID', 404));
     }
@@ -34,6 +34,18 @@ exports.getOne = (Model, popOptions) => async (req, res, next) => {
 
 
 exports.deleteOne = Model => async (req, res, next) => {
+console.log('in delete ',req.user._id);
+    User.findByIdAndUpdate(req.user._id,
+        { $pull: { productsID: req.params.id } },
+        { safe: true, upsert: true },
+        function (err) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('Remove product from productsID in user');
+            }
+        }
+    );
     const doc = await Model.findByIdAndDelete(req.params.id);
 
     if (!doc) {
@@ -64,8 +76,24 @@ exports.updateOne = Model => async (req, res, next) => {
     });
 };
 
-exports.createOne = Model => async (req, res, next) => {
+exports.createOne = (Model, typeModel = null) => async (req, res, next) => {
+    if (typeModel === 'Product') {
+        req.body.user = req.user.id;
+    }
     const doc = await Model.create(req.body);
+
+    // find by document id and update and push item in array
+    User.findByIdAndUpdate(req.user.id,
+        { $push: { productsID: doc._id } },
+        { safe: true, upsert: true },
+        function (err) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('success update productsID in user');
+            }
+        }
+    );
 
     res.status(201).json({
         status: 'success',
@@ -90,7 +118,7 @@ exports.createOne = Model => async (req, res, next) => {
 //         .sort()
 //         .limitFields()
 //         .paginate();
-        
+
 //     // const doc = await features.query.explain();
 //     const doc = await features.query;
 

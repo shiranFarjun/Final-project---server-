@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+// const User=require('./userModel')   //for relation ship between schema,+ 
 
 const productSchema = new mongoose.Schema({
     companyName: {
@@ -23,22 +24,28 @@ const productSchema = new mongoose.Schema({
         required: [true, 'A product must have a category']
     },
     locationCoordinates: [Number],
-    address:{
+    address: {
         type: String
     },
     maxGroupSize: {
         type: Number,
     },
-    // toJSON: { virtuals: true },
-    // toObject: { virtuals: true }
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+        // required: [true, 'Product must belong to user']
+    }
 });
 
-// Virtual populate 
-// productSchema.virtual('reviews', {
-//     ref: 'Review',
-//     foreignField: 'tour',
-//     localField: '_id'
-// });
+productSchema.pre(/^find/, function (next) {
+    this.populate({
+        path: 'user',
+        select: 'name photo email'
+    });
+
+    next();
+});
+
 
 const Product = mongoose.model('Product', productSchema);
 

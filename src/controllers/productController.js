@@ -7,11 +7,11 @@ const factory = require('./handelFactory');
 
 exports.getAllProduct = factory.getAll(Product);
 exports.getProduct = factory.getOne(Product);   //exports.getProduct = factory.getOne(Product, { path: 'reviews' });
-exports.createProduct = factory.createOne(Product);
+exports.createProduct = factory.createOne(Product,'Product');
 exports.updateProduct = factory.updateOne(Product);
 exports.deleteProduct = factory.deleteOne(Product);
 
-exports.getAllLocation = products => async (req, res, next) => {
+exports.getByCategory =async (req, res, next) => {
     console.log('you in get all location ');
     const { category } = req.query; 
     try {
@@ -19,8 +19,14 @@ exports.getAllLocation = products => async (req, res, next) => {
     if (!productsByCategory) {
       return res.status(404).send()
     }
-    res.send(productsByCategory)
-    console.log(productsByCategory.length);
+   
+    res.status(200).json({
+        status: 'success',
+        result: productsByCategory.length,
+        data: {
+            data: productsByCategory
+        }
+    });
     //second option 
     // const resNumber = await Restaurant.countDocuments({ cuisine: _cuisine })
     // console.log(resNumber);
@@ -29,7 +35,31 @@ exports.getAllLocation = products => async (req, res, next) => {
   }
 }
 
+exports.updateUserFieldProductID=async (req, res, next) => {
+    console.log('res data');
+    // const { category } = req.query; 
+    // try {
+    // const productsByCategory = await Product.find({ category: category })
+    // if (!productsByCategory) {
+    //   return res.status(404).send()
+    // }
+   
+    // res.status(200).json({
+    //     status: 'success',
+    //     result: productsByCategory.length,
+    //     data: {
+    //         data: productsByCategory
+    //     }
+    // });
+    //second option 
+    // const resNumber = await Restaurant.countDocuments({ cuisine: _cuisine })
+    // console.log(resNumber);
+//   } catch (error) {
+//     res.status(500).send(error);
+//   }
+}
 
+   
 // const AppError = require('../utils/appError');
 
 // const multerStorage = multer.memoryStorage();

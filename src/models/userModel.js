@@ -46,8 +46,24 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: true,
         select: false
-    }
+    },
+    productsID: [
+        {
+            type: mongoose.Schema.ObjectId,
+            ref: 'Product'
+        }
+    ]
+}, {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
 });
+
+//virtual populate
+userSchema.virtual('products', {
+    ref: ' Product',
+    foreignField: 'user',    //the filed  user id is store in productSchema
+    localField: '_id'          //  
+})
 
 userSchema.pre('save', async function (next) {
 
@@ -64,7 +80,6 @@ userSchema.pre('save', async function (next) {
 
 userSchema.pre('save', function (next) {
     if (!this.isModified('password') || this.isNew) return next();
-
     this.passwordChangedAt = Date.now() - 1000;
     next();
 });
@@ -75,6 +90,15 @@ userSchema.pre(/^find/, function (next) {
     next();
 });
 
+
+// userSchema.pre(/^find/, function (next) {
+//     this.populate({
+//         path: 'productsID',
+//         select: 'companyName category'
+//     });
+
+//     next();
+// });
 
 userSchema.methods.correctPassword = async function (candidatePassword, userPassword) {
     return await bcrypt.compare(candidatePassword, userPassword);

@@ -7,13 +7,14 @@ const router = express.Router();
 router
     .route('/')
     .get(productController.getAllProduct)
-    .post(authController.protect,
-        authController.restrictTo('user'),
-        productController.createProduct
+    .post(
+        authController.protect,
+        productController.createProduct,
     );
-    router
+
+router
     .route('/getByCategory')
-    .get( productController.getAllLocation);
+    .get(productController.getByCategory);
 
 router
     .route('/:id')
@@ -25,23 +26,14 @@ router
     )
     .delete(
         authController.protect,
-        authController.restrictTo('user', 'admin'),
         productController.deleteProduct
     );
 module.exports = router;
 
+// authController.protect,
+// authController.restrictTo('user', 'admin'),
 
 
-
-
-
-// router
-//     .route('/tours-within/:distance/center/:latlng/unit/:unit')
-//     .get(tourController.getToursWithin);
-// /tours-within?distance=233&center=-40,45&unit=mi
-// /tours-within/233/center/-40,45/unit/mi
-
-// router.route('/distances/:latlng/unit/:unit').get(tourController.getDistances);
 
 
 
