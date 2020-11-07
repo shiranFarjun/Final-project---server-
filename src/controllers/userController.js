@@ -31,6 +31,17 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
     }
   });
 });
+exports.getCurrentUser=async (req, res, next) => {
+  const getCurrentUser = await User.findOne({_id:req.user.id}).exec();
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      user: getCurrentUser
+    }
+  });
+};
+
 
 exports.updateMe = catchAsync(async (req, res, next) => {
   // 1) Create error if user POSTs password data
