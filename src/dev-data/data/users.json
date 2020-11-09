@@ -104,6 +104,7 @@
       "email": "miyah@example.com",
       "role": "lead-guide",
       "active": true,
+      "productsID":["5c88fa8cf4afda39709c2952","5c88fa8cf4afda39709c2961"],
       "photo": "user-12.jpg",
       "password": "$2a$12$.XIvvmznHQSa9UOI639yhe4vzHKCYO1vpTUZc4d45oiT4GOZQe1kS"
     },
@@ -113,7 +114,18 @@
       "email": "ben@example.com",
       "role": "guide",
       "active": true,
+      "productsID":["5c88fa8cf4afda39709c2974","5c88fa8cf4afda39709c296c","5c88fa8cf4afda39709c295b"],
       "photo": "user-13.jpg",
       "password": "$2a$12$D3fyuS9ETdBBw5lOwceTMuZcDTyVq28ieeGUAanIuLMcSDz6bpfIe"
+    },
+    {
+      "_id": "5fa93f961509c1be280798f7",
+      "name": "shiran",
+      "email": "shiran@natours.io",
+      "role": "guide",
+      "active": true,
+      "productsID":["5c88fa8cf4afda39709c2974","5c88fa8cf4afda39709c296c","5c88fa8cf4afda39709c295b"],
+      "photo": "user-13.jpg",
+      "password": "$2a$12$fSpivk2p0gYEDJZOFnG.geOiJVXGtcXSWbNPMJz86BW3G2c6hQKLK"
     }
-]
+]      

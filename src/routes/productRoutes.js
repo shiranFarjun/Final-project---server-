@@ -14,7 +14,10 @@ router
 
 router
     .route('/getByCategory')
-    .get(productController.getByCategory);
+    .get(productController.getByCategory)
+router
+    .route('/getByUserId/:id')           //authController.protect,
+    .get(productController.getProductByIdUser);
 
 router
     .route('/:id')

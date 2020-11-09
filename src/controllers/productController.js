@@ -2,6 +2,7 @@
 // const sharp = require('sharp');
 const Product = require('../models/productModel');
 const factory = require('./handelFactory');
+var mongoose = require('mongoose');
 
 
 
@@ -11,6 +12,25 @@ exports.createProduct = factory.createOne(Product,'Product');
 exports.updateProduct = factory.updateOne(Product);
 exports.deleteProduct = factory.deleteOne(Product);
 
+exports.getProductByIdUser=async (req, res, next) => {
+    console.log(' in getProductByIdUser server side',req.params.id);
+
+    // const query = req.user.id; 
+    // console.log('i am in getByUserId',query);
+
+//     const o_id = new ObjectId(query);
+// console.log('o_id',o_id);
+    const productsByCategory = await Product.find({ user: mongoose.Types.ObjectId(req.params.id)})
+    if (!productsByCategory) {
+      return res.status(404).send()
+    }
+    res.status(200).json({
+        status: 'success to get by id user',
+        result: productsByCategory.length,
+        productsByCategory
+        
+    });
+}
 exports.getByCategory =async (req, res, next) => {
     console.log('you in get all location ');
     const { category } = req.query; 

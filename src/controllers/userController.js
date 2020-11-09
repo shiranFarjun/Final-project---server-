@@ -31,8 +31,8 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
     }
   });
 });
-exports.getCurrentUser=async (req, res, next) => {
-  const getCurrentUser = await User.findOne({_id:req.user.id}).exec();
+exports.getCurrentUser = async (req, res, next) => {
+  const getCurrentUser = await User.findOne({ _id: req.user.id }).exec();
 
   res.status(200).json({
     status: 'success',
@@ -80,7 +80,7 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getUser = async(req, res) => {
+exports.getUser = async (req, res) => {
 
   //  let query = Model.findById(req.params.id);
   // if (popOptions) query = query.populate(popOptions);
@@ -95,10 +95,6 @@ exports.getUser = async(req, res) => {
       data: doc
     }
   });
-  // res.status(500).json({
-  //   status: 'error',
-  //   message: 'This route is not yet defined!'
-  // });
 };
 exports.createUser = async (req, res) => {
   const newProfile = req.body;
@@ -109,15 +105,43 @@ exports.createUser = async (req, res) => {
     return sendResponse(res, e, 'cant create base obj user', 400);
   }
 };
-exports.updateUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not yet defined!'
+exports.updateUser =async (req, res) => {
+  const doc = await User.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true
+  });
+
+  if (!doc) {
+    return next(new AppError('No document found with that ID', 404));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      data: doc
+    }
   });
 };
-exports.deleteUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not yet defined!'
+exports.deleteUser = async(req, res) => {
+  const doc = await User.findByIdAndUpdate(req.user.id, { active: false });
+ 
+  if (!doc) {
+    return next(new AppError('No document found with that ID', 404));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      data: doc
+    }
   });
+
 };
+
+
+// exports.getUser = factory.getOne(User);
+// exports.getAllUsers = factory.getAll(User);
+
+// // Do NOT update passwords with this!
+// exports.updateUser = factory.updateOne(User);
+// exports.deleteUser = factory.deleteOne(User);
