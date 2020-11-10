@@ -32,15 +32,20 @@ exports.getOne = (Model, popOptions) => async (req, res, next) => {
     });
 };
 
+// '5fa942a5630316bda845302c' ziv
+//5fa942bc630316bda845302d ziv location
+
+//5fa95017b014b64c0c69ad9a //shiran&avi
+
 
 exports.deleteOne = Model => async (req, res, next) => {
-console.log('in delete ',req.user._id);
     User.findByIdAndUpdate(req.user._id,
         { $pull: { productsID: req.params.id } },
         { safe: true, upsert: true },
         function (err) {
             if (err) {
                 console.log(err);
+
             } else {
                 console.log('Remove product from productsID in user');
             }

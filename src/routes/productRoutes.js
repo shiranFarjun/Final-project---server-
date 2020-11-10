@@ -40,5 +40,3 @@ module.exports = router;
 
 
 
-// router.use('/:productId/user', userRouter);  //-->שורה 8
-// const router = express.Router({ mergeParams: true });  // -->צריך אולי להחזיר לשורה 9

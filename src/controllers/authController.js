@@ -77,6 +77,7 @@ exports.login = async (req, res, next) => {
 
 
 exports.protect = async (req, res, next) => {
+    console.log('in protect');
     // 1) Getting token and check of it's there
     let token;
     if (
@@ -115,10 +116,12 @@ exports.protect = async (req, res, next) => {
 
     // GRANT ACCESS TO PROTECTED ROUTE
     req.user = currentUser;
+    console.log('you login ',req.user);
     next();
 };
 
 exports.restrictTo = (...roles) => {
+    console.log('in resetrict to user or admin');
     return (req, res, next) => {
         // roles ['admin', 'lead-guide']. role='user'
         if (!roles.includes(req.user.role)) {
