@@ -8,54 +8,56 @@ var mongoose = require('mongoose');
 
 exports.getAllProduct = factory.getAll(Product);
 exports.getProduct = factory.getOne(Product);   //exports.getProduct = factory.getOne(Product, { path: 'reviews' });
-exports.createProduct = factory.createOne(Product,'Product');
+exports.createProduct = factory.createOne(Product, 'Product');
 exports.updateProduct = factory.updateOne(Product);
 exports.deleteProduct = factory.deleteOne(Product);
 
-exports.getProductByIdUser=async (req, res, next) => {
-    console.log(' in getProductByIdUser server side',req.params.id);
+exports.getProductByIdUser = async (req, res, next) => {
+    console.log(' in getProductByIdUser server side', req.params.id);
 
     // const query = req.user.id; 
     // console.log('i am in getByUserId',query);
 
-//     const o_id = new ObjectId(query);
-// console.log('o_id',o_id);
-    const productsByCategory = await Product.find({ user: mongoose.Types.ObjectId(req.params.id)})
-    if (!productsByCategory) {
-      return res.status(404).send()
+    //     const o_id = new ObjectId(query);
+    // console.log('o_id',o_id);
+    const getProductByIdUser = await Product.find({ user: mongoose.Types.ObjectId(req.params.id) })
+    if (!getProductByIdUser) {
+        return res.status(404).send()
     }
     res.status(200).json({
         status: 'success to get by id user',
-        result: productsByCategory.length,
-        productsByCategory
-        
+        result: getProductByIdUser.length,
+        getProductByIdUser
+
     });
 }
-exports.getByCategory =async (req, res, next) => {
+exports.getByCategory = async (req, res, next) => {
     console.log('you in get all location ');
-    const { category } = req.query; 
+    const { category } = req.query;
     try {
-    const productsByCategory = await Product.find({ category: category })
-    if (!productsByCategory) {
-      return res.status(404).send()
-    }
-   
-    res.status(200).json({
-        status: 'success',
-        result: productsByCategory.length,
-        data: {
-            data: productsByCategory
+        const productsByCategory = await Product.find({ category: category })
+        if (!productsByCategory) {
+            return res.status(404).send()
         }
-    });
-    //second option 
-    // const resNumber = await Restaurant.countDocuments({ cuisine: _cuisine })
-    // console.log(resNumber);
-  } catch (error) {
-    res.status(500).send(error);
-  }
+
+
+        
+
+        res.status(200).json({
+            status: 'success',
+            result: productsByCategory.length,
+            productsByCategory
+
+        });
+        //second option 
+        // const resNumber = await Restaurant.countDocuments({ cuisine: _cuisine })
+        // console.log(resNumber);
+    } catch (error) {
+        res.status(500).send(error);
+    }
 }
 
-exports.updateUserFieldProductID=async (req, res, next) => {
+exports.updateUserFieldProductID = async (req, res, next) => {
     console.log('res data');
     // const { category } = req.query; 
     // try {
@@ -63,7 +65,7 @@ exports.updateUserFieldProductID=async (req, res, next) => {
     // if (!productsByCategory) {
     //   return res.status(404).send()
     // }
-   
+
     // res.status(200).json({
     //     status: 'success',
     //     result: productsByCategory.length,
@@ -74,12 +76,12 @@ exports.updateUserFieldProductID=async (req, res, next) => {
     //second option 
     // const resNumber = await Restaurant.countDocuments({ cuisine: _cuisine })
     // console.log(resNumber);
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
+    //   } catch (error) {
+    //     res.status(500).send(error);
+    //   }
 }
 
-   
+
 // const AppError = require('../utils/appError');
 
 // const multerStorage = multer.memoryStorage();
